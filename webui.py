@@ -579,8 +579,8 @@ def load_api_key(key_type="civitai"):
 def download_lora_model(page_url, api_key):
     def slugify(value):
         value = str(value)
-        value = re.sub('[^\w\s-]', '', value).strip().lower()
-        value = re.sub('[-\s]+', '-', value)
+        value = re.sub(r'[^\w\s-]', '', value).strip().lower()
+        value = re.sub(r'[-\s]+', '-', value)
         return value
 
     if not api_key:
